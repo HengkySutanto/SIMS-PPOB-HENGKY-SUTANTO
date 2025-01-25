@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+html {
+  @apply text-gray-700;
+}
+
+.apply-center {
+  @apply flex items-center justify-center;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f7f4ff;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #d3d3d3;
+    border-radius: 100vh;
+    border: 3px solid #e8e8e8;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a7a7a7;
+  }
+}

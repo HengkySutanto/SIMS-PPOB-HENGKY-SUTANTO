@@ -4,7 +4,8 @@ import Cookies from 'js-cookie';
 const initialState = {
   isAuthenticated: !!Cookies.get('token'),
   user: null,
-  token: Cookies.get('token') || null
+  token: Cookies.get('token') || null,
+  balance: 0
 };
 
 const authSlice = createSlice({
@@ -21,11 +22,18 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.user = null;
       state.token = null;
+      state.balance = 0;
       // Remove token from cookie
       Cookies.remove('token');
     },
+    setUser: (state, action) => {
+      state.user = action.payload;
+    },
+    setBalance: (state, action) => {
+      state.balance = action.payload;
+    }
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, setUser, setBalance } = authSlice.actions;
 export default authSlice.reducer; 

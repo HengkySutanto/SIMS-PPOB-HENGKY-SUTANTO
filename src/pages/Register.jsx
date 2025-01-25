@@ -98,7 +98,7 @@ const Register = () => {
 
   return (
     <div className="grid md:grid-cols-2">
-      <div className="min-h-screen register-form p-4 flex flex-col items-center justify-center gap-y-8">
+      <div className="min-h-[calc(100vh-62px)] register-form p-4 flex flex-col items-center justify-center gap-y-8">
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center gap-x-3 mb-5">
             <img src="/logo.png" alt="SIMS PPOB logo" />
@@ -203,7 +203,7 @@ const Register = () => {
         </div>
       </div>
       <div className="hidden md:block w-full h-full">
-        <img src={'/ilustrasi-login.png'} alt="Register" className='w-full h-screen object-cover object-right' />
+        <img src={'/ilustrasi-login.png'} alt="Register" className='w-full h-[calc(100vh-62px)] object-cover object-right' />
       </div>
     </div>
   );
