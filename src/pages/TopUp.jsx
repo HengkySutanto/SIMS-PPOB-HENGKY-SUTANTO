@@ -42,8 +42,8 @@ const TopUp = () => {
   const confirmTopUp = (e) => {
     e.preventDefault()
     Swal.fire({
-      title: "<img src='/logo.png' class='mx-auto w-12' />",
-      icon: "<img src='/logo.png' alt='SIMS PPOB logo' />",
+      title: "<img src='/logo-1.png' class='mx-auto w-12' />",
+      icon: "<img src='/logo-1.png' alt='SIMS PPOB logo' />",
       html: `
         Anda yakin untuk Top Up sebesar<br />
         Rp. ${formData.topup_amount.toLocaleString('id')} ?
@@ -71,7 +71,7 @@ const TopUp = () => {
     // Validate amount
     if (!formData.topup_amount || formData.topup_amount <= 0) {
       Swal.fire({
-        title: "<img src='/logo.png' class='mx-auto w-12' />",
+        title: "<img src='/logo-1.png' class='mx-auto w-12' />",
         text: 'Top up amount must be greater than 0'
       });
       return;
@@ -98,7 +98,7 @@ const TopUp = () => {
         
         // Show success message
         await Swal.fire({
-          title: "<img src='/logo.png' class='mx-auto w-12' />",
+          title: "<img src='/logo-1.png' class='mx-auto w-12' />",
           text: `Top up Sebesar <br />
           ${data.data.balance}<br />
           Berhasil!`,
@@ -113,14 +113,14 @@ const TopUp = () => {
       } else if (data.status === 108) {
         // Token invalid/expired
         Swal.fire({
-          title: "<img src='/logo.png' class='mx-auto w-12' />",
+          title: "<img src='/logo-1.png' class='mx-auto w-12' />",
           text: `Unauthorized User`,
         });
       } else {
         // Other errors
         console.error('Top up failed:', data.message);
         Swal.fire({
-          title: "<img src='/logo.png' class='mx-auto w-12' />",
+          title: "<img src='/logo-1.png' class='mx-auto w-12' />",
           text: `Top up Sebesar <br />
           ${data.data.balance}<br />
           Gagal`,

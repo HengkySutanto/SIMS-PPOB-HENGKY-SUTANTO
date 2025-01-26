@@ -124,14 +124,14 @@ const Account = () => {
           } else if (data.status === 108) {
             // Token invalid/expired
             Swal.fire({
-              title: "<img src='/logo.png' class='mx-auto w-12' />",
+              title: "<img src='/logo-1.png' class='mx-auto w-12' />",
               text: `Unauthorized User`,
             });
           } else {
             // Other errors
             console.error('Top up failed:', data.message);
             Swal.fire({
-              title: "<img src='/logo.png' class='mx-auto w-12' />",
+              title: "<img src='/logo-1.png' class='mx-auto w-12' />",
               text: `Upload image gagal`,
             });
           }

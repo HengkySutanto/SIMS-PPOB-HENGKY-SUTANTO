@@ -60,7 +60,7 @@ const Transaction = () => {
         setHasMore(newTransactions.length === LIMIT);
       } else if (data.status === 108) {
         Swal.fire({
-          title: "<img src='/logo.png' class='mx-auto w-12' />",
+          title: "<img src='/logo-1.png' class='mx-auto w-12' />",
           text: `Unauthorized User`,
           confirmButtonText: 'Close',
         });
@@ -70,7 +70,7 @@ const Transaction = () => {
     } catch (error) {
       console.error('Error fetching transactions:', error);
       Swal.fire({
-        title: "<img src='/logo.png' class='mx-auto w-12' />",
+        title: "<img src='/logo-1.png' class='mx-auto w-12' />",
         text: 'Terjadi kesalahan pada server',
         confirmButtonColor: 'white',
       });

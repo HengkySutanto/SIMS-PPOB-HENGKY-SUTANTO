@@ -5,43 +5,43 @@ const dummyServices = [
   {
     service_code: "PAJAK",
     service_name: "Pajak PBB",
-    service_icon: "pbb.png",
+    service_icon: "pbb-1.png",
     service_tariff: 40000
   },
   {
     service_code: "PLN",
     service_name: "Listrik",
-    service_icon: "listrik.png",
+    service_icon: "listrik-1.png",
     service_tariff: 10000
   },
   {
     service_code: "PDAM",
     service_name: "PDAM Berlangganan",
-    service_icon: "pdam.png",
+    service_icon: "pdam-1.png",
     service_tariff: 40000
   },
   {
     service_code: "PULSA",
     service_name: "Pulsa",
-    service_icon: "pulsa.png",
+    service_icon: "pulsa-1.png",
     service_tariff: 40000
   },
   {
     service_code: "PGN",
     service_name: "PGN Berlangganan",
-    service_icon: "pgn.png",
+    service_icon: "pgn-1.png",
     service_tariff: 50000
   },
   {
     service_code: "MUSIK",
     service_name: "Musik Berlangganan",
-    service_icon: "musik.png",
+    service_icon: "musik-1.png",
     service_tariff: 50000
   },
   {
     service_code: "TV",
     service_name: "TV Berlangganan",
-    service_icon: "televisi.png",
+    service_icon: "televisi-1.png",
     service_tariff: 50000
   },
   {
@@ -53,7 +53,7 @@ const dummyServices = [
   {
     service_code: "VOUCHER_GAME",
     service_name: "Voucher Game",
-    service_icon: "game.png",
+    service_icon: "game-1.png",
     service_tariff: 100000
   },
   {
@@ -65,13 +65,13 @@ const dummyServices = [
   {
     service_code: "QURBAN",
     service_name: "Qurban",
-    service_icon: "kurban.png",
+    service_icon: "kurban-1.png",
     service_tariff: 200000
   },
   {
     service_code: "ZAKAT",
     service_name: "Zakat",
-    service_icon: "zakat.png",
+    service_icon: "zakat-1.png",
     service_tariff: 300000
   }
 ]

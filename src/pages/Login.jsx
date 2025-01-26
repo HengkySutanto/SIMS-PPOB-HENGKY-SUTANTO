@@ -73,7 +73,7 @@ const Login = () => {
       <div className="min-h-[calc(100vh-62px)] login-form p-4 flex flex-col items-center justify-center gap-y-8">
         <div className="flex flex-col items-center">
           <div className="flex items-center justify-center gap-x-3 mb-5">
-            <img src="/logo.png" alt="SIMS PPOB logo" />
+            <img src="/logo-1.png" alt="SIMS PPOB logo" />
             <div className='text-lg font-semibold'>SIMS PPOB</div>
           </div>
           <div className="text-2xl font-semibold text-center">

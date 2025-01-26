@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="bg-white text-gray-800 p-4 border-b-2 border-gray-200">
       <div className="container mx-auto flex flex-wrap justify-between items-center gap-2">
         <Link to="/" className="text-xl font-semibold flex items-center gap-x-3 text-nowrap">
-          <img src="/logo.png" alt="SIMS PPOB" className='w-6 h-6 object-contain' />
+          <img src="/logo-1.png" alt="SIMS PPOB" className='w-6 h-6 object-contain' />
           SIMS PPOB
         </Link>
         <div className="flex items-center space-x-8 font-semibold text-nowrap ml-auto">
