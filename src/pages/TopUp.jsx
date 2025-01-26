@@ -103,7 +103,7 @@ const TopUp = () => {
           ${data.data.balance}<br />
           Berhasil!`,
           confirmButtonColor: 'white',
-          confirmButtonText: 'Kembali ke Beranda'
+          confirmButtonText: `<strong class="text-red-500 text-sm">Oke</strong>`,
         }).then(() => {
           return navigate('/')
         });
@@ -124,8 +124,7 @@ const TopUp = () => {
           text: `Top up Sebesar <br />
           ${data.data.balance}<br />
           Gagal`,
-          confirmButtonColor: 'white',
-          confirmButtonText: 'Kembali ke Beranda'
+          confirmButtonText: `<strong class="text-red-500 text-sm">Oke</strong>`,
         }).then(() => {
           return navigate('/')
         });

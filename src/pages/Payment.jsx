@@ -30,7 +30,7 @@ function Payment() {
       tarif: newValue
     }));
   };
-  
+
 
   const confirmPayment = (e) => {
     e.preventDefault()
@@ -76,7 +76,7 @@ function Payment() {
 
       const data = await response.json();
 
-      if (data.status === 0) {        
+      if (data.status === 0) {
         // Show success message
         await Swal.fire({
           title: "<img src='/logo-1.png' class='mx-auto w-12' />",
@@ -85,7 +85,7 @@ function Payment() {
           ${paymentData.tarif}<br />
           Berhasil!`,
           confirmButtonColor: 'white',
-          confirmButtonText: 'Kembali ke Beranda'
+          confirmButtonText: `<strong class="text-red-500 text-sm">Oke</strong>`,
         }).then(() => {
           return navigate('/')
         });
@@ -103,11 +103,10 @@ function Payment() {
         console.error('Top up failed:', data.message);
         Swal.fire({
           title: "<img src='/logo-1.png' class='mx-auto w-12' />",
-          text: `Top up Sebesar <br />
-          ${data.data.balance}<br />
+          text: `Pembayaran ${paymentData.service_name}<br />
           Gagal`,
           confirmButtonColor: 'white',
-          confirmButtonText: 'Kembali ke Beranda'
+          confirmButtonText: `<strong class="text-red-500 text-sm">Oke</strong>`,
         }).then(() => {
           return navigate('/')
         });
@@ -121,7 +120,7 @@ function Payment() {
       });
     }
   };
-  
+
   if (!paymentData) return null;
   return (
     <div className="payment px-5 md:px-0">
