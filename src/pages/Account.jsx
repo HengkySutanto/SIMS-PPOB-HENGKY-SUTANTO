@@ -34,11 +34,10 @@ const Account = () => {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
+          'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          file: formData
-        })
+        body: JSON.stringify(formData)
       });
 
       const data = await response.json();
@@ -106,7 +105,6 @@ const Account = () => {
             method: 'PUT',
             headers: {
               'Authorization': `Bearer ${token}`,
-              'Accept': 'application/json',
               'Content-Type': 'multipart/form-data'
             },
             body: formData
