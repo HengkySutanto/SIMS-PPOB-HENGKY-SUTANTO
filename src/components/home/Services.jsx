@@ -1,28 +1,90 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const services = [
-  { title: 'PBB', img: 'pbb.png', alt: 'pbb' },
-  { title: 'Listrik', img: 'listrik.png', alt: 'listrik' },
-  { title: 'Pulsa', img: 'pulsa.png', alt: 'pulsa' },
-  { title: 'PDAM', img: 'pdam.png', alt: 'pdam' },
-  { title: 'PGN', img: 'pgn.png', alt: 'pgn' },
-  { title: 'TV Langganan', img: 'televisi.png', alt: 'televisi' },
-  { title: 'Musik', img: 'musik.png', alt: 'musik' },
-  { title: 'Voucher Game', img: 'game.png', alt: 'voucher game' },
-  { title: 'Voucher Makanan', img: 'voucher-makanan.png', alt: 'voucher makanan' },
-  { title: 'Kurban', img: 'kurban.png', alt: 'kurban' },
-  { title: 'Zakat', img: 'zakat.png', alt: 'zakat' },
-  { title: 'Paket Data', img: 'paket-data.png', alt: 'paket data' },
+const dummyServices = [
+  {
+    service_code: "PAJAK",
+    service_name: "Pajak PBB",
+    service_icon: "pbb.png",
+    service_tariff: 40000
+  },
+  {
+    service_code: "PLN",
+    service_name: "Listrik",
+    service_icon: "listrik.png",
+    service_tariff: 10000
+  },
+  {
+    service_code: "PDAM",
+    service_name: "PDAM Berlangganan",
+    service_icon: "pdam.png",
+    service_tariff: 40000
+  },
+  {
+    service_code: "PULSA",
+    service_name: "Pulsa",
+    service_icon: "pulsa.png",
+    service_tariff: 40000
+  },
+  {
+    service_code: "PGN",
+    service_name: "PGN Berlangganan",
+    service_icon: "pgn.png",
+    service_tariff: 50000
+  },
+  {
+    service_code: "MUSIK",
+    service_name: "Musik Berlangganan",
+    service_icon: "musik.png",
+    service_tariff: 50000
+  },
+  {
+    service_code: "TV",
+    service_name: "TV Berlangganan",
+    service_icon: "televisi.png",
+    service_tariff: 50000
+  },
+  {
+    service_code: "PAKET_DATA",
+    service_name: "Paket data",
+    service_icon: "paket-data.png",
+    service_tariff: 50000
+  },
+  {
+    service_code: "VOUCHER_GAME",
+    service_name: "Voucher Game",
+    service_icon: "game.png",
+    service_tariff: 100000
+  },
+  {
+    service_code: "VOUCHER_MAKANAN",
+    service_name: "Voucher Makanan",
+    service_icon: "voucher-makanan.png",
+    service_tariff: 100000
+  },
+  {
+    service_code: "QURBAN",
+    service_name: "Qurban",
+    service_icon: "kurban.png",
+    service_tariff: 200000
+  },
+  {
+    service_code: "ZAKAT",
+    service_name: "Zakat",
+    service_icon: "zakat.png",
+    service_tariff: 300000
+  }
 ]
 
-function Services() {
+function Services({ services }) {
+  const navigate = useNavigate()
   return (
     <div className='max-w-full overflow-auto flex items-start justify-between gap-x-6 scrollbar'>
-      {services?.map((service) => (
-        <div key={service.img} className="flex flex-col items-center w-10 md:w-14 xl:w-18 flex-shrink-0">
-          <img src={service.img} alt={service.alt} className='w-10 md:w-14 xl:w-18' />
+      {dummyServices?.map((service) => (
+        <div key={service.service_icon} className="flex flex-col items-center w-10 md:w-14 xl:w-18 flex-shrink-0" onClick={() => navigate(`/payment?code=${service.service_code}&service_name=${service.service_name}&tarif=${service.service_tariff}&icon=${service.service_icon}`)}>
+          <img src={service.service_icon} alt={service.service_name} className='w-10 md:w-14 xl:w-18' />
           <div className="text-xs md:text-sm text-wrap text-center">
-            {service.title}
+            {service.service_name}
           </div>
         </div>
       ))}

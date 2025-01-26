@@ -11,6 +11,7 @@ import Transaction from '../pages/Transaction';
 import Account from '../pages/Account';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import Payment from '../pages/Payment';
 
 export const router = createBrowserRouter([
   {
@@ -65,10 +66,10 @@ export const router = createBrowserRouter([
                 path: 'transaction',
                 element: <Transaction />,
               },
-              // {
-              //   path: 'account',
-              //   element: <Account />,
-              // },
+              {
+                path: 'payment',
+                element: <Payment />,
+              },
             ],
           },
         ],

@@ -31,9 +31,12 @@ const authSlice = createSlice({
     },
     setBalance: (state, action) => {
       state.balance = action.payload;
-    }
+    },
+    setProfileImage: (state, action) => {
+      state.image = action.payload;
+    },
   },
 });
 
-export const { login, logout, setUser, setBalance } = authSlice.actions;
+export const { login, logout, setUser, setBalance, setProfileImage } = authSlice.actions;
 export default authSlice.reducer; 
