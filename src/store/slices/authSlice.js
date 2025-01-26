@@ -5,7 +5,8 @@ const initialState = {
   isAuthenticated: !!Cookies.get('token'),
   user: null,
   token: Cookies.get('token') || null,
-  balance: 0
+  balance: 0,
+  profile_image: ''
 };
 
 const authSlice = createSlice({
@@ -33,7 +34,7 @@ const authSlice = createSlice({
       state.balance = action.payload;
     },
     setProfileImage: (state, action) => {
-      state.image = action.payload;
+      state.profile_image = action.payload;
     },
   },
 });

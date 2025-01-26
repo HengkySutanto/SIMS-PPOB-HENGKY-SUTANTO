@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { FaRegUser } from 'react-icons/fa';
 import { API_BASE_URL } from '../config/api';
-import { logout, setUser } from '../store/slices/authSlice';
+import { logout, setUser, setProfileImage } from '../store/slices/authSlice';
 import Swal from 'sweetalert2';
 import { HiPencil } from "react-icons/hi2";
 
@@ -16,7 +16,7 @@ const Account = () => {
     first_name: user?.first_name || 'User First Name',
     last_name: user?.last_name || 'User Last Name'
   });
-  const [profileImage, setProfileImage] = useState()
+  // const [profileImage, setProfileImage] = useState()
   const [profileImageUrl, setProfileImageUrl] = useState()
   const [isLoadingUploadFile, setIsLoadingUploadFile] = useState(null);
 
@@ -96,9 +96,9 @@ const Account = () => {
       let fileExt = fileName.split('.').slice(-1)[0]
       let fileIsImage = ['jpg', 'jpeg', 'png'].includes(fileExt)
 
-      let formData = new FormData();
+      let newFormData = new FormData();
       if (fileIsImage) {
-        formData.append("file", files[0], `${files[0].name}-${randomNumber}.${fileExt}`);
+        newFormData.append("file", files[0], `${files[0].name}-${randomNumber}.${fileExt}`);
 
         try {
           const response = await fetch(`${API_BASE_URL}/profile/image`, {
@@ -107,7 +107,7 @@ const Account = () => {
               'Authorization': `Bearer ${token}`,
               'Content-Type': 'multipart/form-data'
             },
-            body: formData
+            body: newFormData
           });
 
           const data = await response.json();
