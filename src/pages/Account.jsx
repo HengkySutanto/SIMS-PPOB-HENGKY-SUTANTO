@@ -36,7 +36,9 @@ const Account = () => {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         },
-        body: formData
+        body: JSON.stringify({
+          file: formData
+        })
       });
 
       const data = await response.json();
