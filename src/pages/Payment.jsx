@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { TbNumber100Small } from 'react-icons/tb';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { API_BASE_URL } from '../config/api';
 import { useSelector } from 'react-redux';
 
 function Payment() {
+  const navigate = useNavigate()
   const token = useSelector((state) => state.auth.token);
   const [paymentData, setPaymentData] = useState()
   let { search } = useLocation()
