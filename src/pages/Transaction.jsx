@@ -102,10 +102,10 @@ const Transaction = () => {
 
       {loading ? (
         <div className="text-center">Loading...</div>
-      ) : transactions.length > 0 ? (
+      ) : dummyDataOFTransactions.length > 0 ? (
         <div className="space-y-4">
           <div className="grid gap-4">
-            {transactions.map((transaction) => (
+            {dummyDataOFTransactions.map((transaction) => (
               <div
                 key={transaction.invoice_number}
                 className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
