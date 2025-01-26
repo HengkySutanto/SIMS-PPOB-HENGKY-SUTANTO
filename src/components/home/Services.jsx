@@ -82,7 +82,7 @@ function Services({ services }) {
     <div className='max-w-full overflow-auto flex items-start justify-between gap-x-6 scrollbar'>
       {dummyServices?.map((service) => (
         <div key={service.service_icon} className="flex flex-col items-center w-10 md:w-14 xl:w-18 flex-shrink-0" onClick={() => navigate(`/payment?code=${service.service_code}&service_name=${service.service_name}&tarif=${service.service_tariff}&icon=${service.service_icon}`)}>
-          <img src={service.service_icon} alt={service.service_name} className='w-10 md:w-14 xl:w-18' />
+          <img src={`/${service.service_icon}`} alt={service.service_name} className='w-10 md:w-14 xl:w-18' />
           <div className="text-xs md:text-sm text-wrap text-center">
             {service.service_name}
           </div>
