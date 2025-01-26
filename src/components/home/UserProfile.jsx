@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Dots from '../generals/Dots'
 import { IoEyeOutline } from 'react-icons/io5';
-import Dots from '../generals/dots';
 import { API_BASE_URL } from '../../config/api';
 import { setUser, setBalance } from '../../store/slices/authSlice';
 
