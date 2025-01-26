@@ -61,7 +61,7 @@ function UserProfile() {
   return (
     <div className="grid md:grid-cols-2 gap-3">
       <div className="user-profile px-5 md:px-0">
-        <img src={user?.profile_image || "/profile-photo.png"} alt={user?.first_name} className='mb-5' />
+        <img src={user?.profile_image || "/profile-photo.png"} alt={user?.first_name} className='w-16 h-16 border border-gray-200 rounded-full overflow-hidden mb-3' />
         <div className="text-md">Selamat datang,</div>
         <div className="text-lg xl:text-2xl font-bold">{`${user?.first_name ?? 'User'} ${user?.last_name ?? 'Name'}`}</div>
       </div>

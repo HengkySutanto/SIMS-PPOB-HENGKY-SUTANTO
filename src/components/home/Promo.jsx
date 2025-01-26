@@ -16,8 +16,8 @@ function Promo({ banners }) {
       </div>
       <div className='max-w-full overflow-auto flex items-start justify-between gap-x-3 md:gap-x-6 scrollbar'>
         {banners?.map((banner) => (
-          <div key={banner.img} className="flex flex-col items-center w-4/12 md:w-3/12 xl:w-[18%] flex-shrink-0">
-            <img src={banner.img} alt={banner.alt} className='w-full' />
+          <div key={banner.banner_image} className="flex flex-col items-center w-4/12 md:w-3/12 xl:w-[18%] flex-shrink-0">
+            <img src={banner.banner_image} alt={banner.banner_name} className='w-full' />
           </div>
         ))}
       </div>
