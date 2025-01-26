@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { FaRegUser } from 'react-icons/fa';
 import { API_BASE_URL } from '../config/api';
@@ -16,10 +16,12 @@ const Account = () => {
     first_name: user?.first_name || 'User First Name',
     last_name: user?.last_name || 'User Last Name'
   });
-  // const [profileImage, setProfileImage] = useState()
   const [profileImageUrl, setProfileImageUrl] = useState()
   const [isLoadingUploadFile, setIsLoadingUploadFile] = useState(null);
 
+  useEffect(() => {
+    setProfileImageUrl(user?.profile_image)
+  }, [dispatch, user])
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -76,7 +78,7 @@ const Account = () => {
       last_name: user?.last_name || 'User Last Name'
     })
   }
-
+  
   const logoutUser = () => {
     dispatch(logout());
   }
@@ -102,19 +104,18 @@ const Account = () => {
         try {
           const response = await fetch(`${API_BASE_URL}/profile/image`, {
             method: 'PUT',
-            // headers: {
-            //   'Authorization': `Bearer ${token}`,
-            //   "Accept": "application/json",
-            //   'Content-Type': 'multipart/form-data'
-            // },
+            headers: {
+              'Authorization': `Bearer ${token}`,
+            },
             body: imageData
           });
 
           const data = await response.json();
 
           if (data.status === 0) {
-            // Update balance in store
+            // Update image in store
             dispatch(setProfileImage(data.data.profile_image));
+            setProfileImageUrl(data.data.profile_image)
 
             // Show success message
             await Swal.fire({
@@ -158,7 +159,7 @@ const Account = () => {
       <div className="account px-5 md:px-0">
         <div className="flex flex-col items-center mb-5">
           <div className="relative">
-            <img src={user?.profile_image || "/profile-photo.png"} alt={user?.first_name} className="w-32 h-32 rounded-full mb-5" />
+            <img src={profileImageUrl || "profile-photo.png"} alt={user?.first_name} className="w-32 h-32 rounded-full mb-5" />
             <label htmlFor="profile_image" className={`absolute bottom-6 right-0 p-2 bg-white border border-gray-300  text-gray-300 rounded-full shadow-lg ${isLoadingUploadFile && "hover:text-gray-600"}`}>
               <HiPencil className="w-4 h-4" />
             </label>
