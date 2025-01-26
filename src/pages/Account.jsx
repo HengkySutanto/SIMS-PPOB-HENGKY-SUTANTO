@@ -96,19 +96,18 @@ const Account = () => {
       let fileExt = fileName.split('.').slice(-1)[0]
       let fileIsImage = ['jpg', 'jpeg', 'png'].includes(fileExt)
 
-      let newFormData = new FormData();
+      let imageData = new FormData();
       if (fileIsImage) {
-        newFormData.append("file", files[0], `${files[0].name}-${randomNumber}.${fileExt}`);
-
+        imageData.append("file", files[0], `${files[0].name}-${randomNumber}.${fileExt}`);
         try {
           const response = await fetch(`${API_BASE_URL}/profile/image`, {
             method: 'PUT',
-            headers: {
-              'Authorization': `Bearer ${token}`,
-              'accept' : 'application/json',
-              'Content-Type': 'multipart/form-data'
-            },
-            body: JSON.stringify(newFormData)
+            // headers: {
+            //   'Authorization': `Bearer ${token}`,
+            //   "Accept": "application/json",
+            //   'Content-Type': 'multipart/form-data'
+            // },
+            body: imageData
           });
 
           const data = await response.json();
