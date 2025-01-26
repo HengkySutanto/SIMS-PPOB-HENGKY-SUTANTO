@@ -107,7 +107,7 @@ const Account = () => {
               'Authorization': `Bearer ${token}`,
               'Content-Type': 'multipart/form-data'
             },
-            body: newFormData
+            body: JSON.stringify(newFormData)
           });
 
           const data = await response.json();
