@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Promo from "../components/home/Promo";
 import Services from "../components/home/Services";
-import UserProfile from "../components/home/UserProfile"
 import { API_BASE_URL } from "../config/api";
 
 const Home = () => {

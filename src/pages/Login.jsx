@@ -19,46 +19,46 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    dispatch(login({ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNTRVdXRjYTdCS0ZPX0ZUZGZ1bXlJem9zSTRKa1VxUGZVZ0ROSTUwelRTQlo2aHoyY0hKZ1VMb1loM09HUUd0ekQxV3dTX194aHBNZTE2SGFscVRzcEhjS21UclJ3S2FYYmZob3AzdzFFUHJ2NFdBQmk1c0RpdV9DSnZTSWt2MDFTbEU0QU5pbVB0bUx5azZoUzlOalVQNEZaVVpfRVBtcEk4Y3pNc3ZWa2JFPSIsImlhdCI6MTYyNjkyODk3MSwiZXhwIjoyNTU2MTE4Nzk4fQ.9C9NvhZYKivhGWnrjo4Wr1Rv-wur1wCm0jqfK9XDD8U" }));
-    // try {
-    //   const response = await fetch(`${API_BASE_URL}/login`, {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       'Accept': 'application/json'
-    //     },
-    //     body: JSON.stringify(formData)
-    //   });
+    // dispatch(login({ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNTRVdXRjYTdCS0ZPX0ZUZGZ1bXlJem9zSTRKa1VxUGZVZ0ROSTUwelRTQlo2aHoyY0hKZ1VMb1loM09HUUd0ekQxV3dTX194aHBNZTE2SGFscVRzcEhjS21UclJ3S2FYYmZob3AzdzFFUHJ2NFdBQmk1c0RpdV9DSnZTSWt2MDFTbEU0QU5pbVB0bUx5azZoUzlOalVQNEZaVVpfRVBtcEk4Y3pNc3ZWa2JFPSIsImlhdCI6MTYyNjkyODk3MSwiZXhwIjoyNTU2MTE4Nzk4fQ.9C9NvhZYKivhGWnrjo4Wr1Rv-wur1wCm0jqfK9XDD8U" }));
+    try {
+      const response = await fetch(`${API_BASE_URL}/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
 
-    //   const data = await response.json();
+      const data = await response.json();
       
-    //   if (data.status === 0) {
-    //     // Update redux state (which will also set the cookie)
-    //     dispatch(login({ token: data.data.token }));
+      if (data.status === 0) {
+        // Update redux state (which will also set the cookie)
+        dispatch(login({ token: data.data.token }));
         
-    //     await Swal.fire({
-    //       icon: 'success',
-    //       title: 'Success',
-    //       text: data.message,
-    //       timer: 1500,
-    //       showConfirmButton: false
-    //     });
+        await Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: data.message,
+          timer: 1500,
+          showConfirmButton: false
+        });
         
-    //     navigate('/');
-    //   } else {
-    //     Swal.fire({
-    //       icon: 'error',
-    //       title: 'Error',
-    //       text: data.message
-    //     });
-    //   }
-    // } catch (error) {
-    //   Swal.fire({
-    //     icon: 'error',
-    //     title: 'Error',
-    //     text: 'Terjadi kesalahan pada server'
-    //   });
-    // }
+        navigate('/');
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: data.message
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Terjadi kesalahan pada server'
+      });
+    }
   };
 
   const handleChange = (e) => {
