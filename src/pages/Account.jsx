@@ -108,7 +108,7 @@ const Account = () => {
               'accept' : 'application/json',
               'Content-Type': 'multipart/form-data'
             },
-            body: newFormData
+            body: JSON.stringify(newFormData)
           });
 
           const data = await response.json();
