@@ -39,16 +39,6 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'account',
-        element: <PrivateRoute />,
-        children: [
-          {
-            index: true,
-            element: <Account />,
-          },
-        ],
-      },
-      {
         element: <PrivateRoute />,
         children: [
           {
@@ -59,21 +49,25 @@ export const router = createBrowserRouter([
                 element: <Home />,
               },
               {
-                path: 'dashboard',
+                path: '/dashboard',
                 element: <Dashboard />,
               },
               {
-                path: 'top-up',
+                path: '/top-up',
                 element: <TopUp />,
               },
               {
-                path: 'transaction',
+                path: '/transaction',
                 element: <Transaction />,
               },
               {
-                path: 'payment',
+                path: '/payment',
                 element: <Payment />,
               },
+              {
+                path: '/account',
+                element: <Account />,
+              }
             ],
           },
         ],
